@@ -70,3 +70,14 @@ export interface Site {
    */
   xTwitterUsername: XTwitterUsername;
 }
+
+interface BaseNavigationItem {
+  title: string;
+  path: Path;
+}
+
+interface NavigationItem extends BaseNavigationItem {
+  child?: Array<BaseNavigationItem>
+}
+
+export type Navigation = Array<NavigationItem>

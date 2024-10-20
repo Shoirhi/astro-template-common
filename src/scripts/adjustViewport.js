@@ -16,7 +16,7 @@ const adjustViewport = () => {
   const viewport = document.querySelector('meta[name="viewport"]');
   const value =
     window.outerWidth < triggerWidth
-      ? `width=${triggerWidth}, target-densitydpi=device-dpi`
+      ? `width=${triggerWidth}`
       : "width=device-width, initial-scale=1";
   viewport.setAttribute("content", value);
 };

@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+
+import fluid, { extract, screens, fontSize } from "fluid-tailwind";
+
 export default {
   darkMode: ["class"],
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: {
+    files: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+    extract,
+  },
   theme: {
     extend: {
       borderRadius: {
@@ -52,6 +58,8 @@ export default {
         },
       },
     },
+    screens,
+    fontSize,
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), fluid],
 };

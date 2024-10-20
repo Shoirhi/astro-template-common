@@ -1,11 +1,13 @@
 ---
 import "@/styles/globals.css";
 
-import { SITE } from "@/config";
+import { SITE, NAVIGATION } from "@/config";
 
 import type { Path, OGType, OGImageMIMEType } from "@/types";
 
 import Head from "@/components/Head.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 
 interface Props {
   title?: string;
@@ -46,8 +48,12 @@ const {
     ogLocale={SITE.ogLocale}
     xTwitterUsername={SITE.xTwitterUsername}
   />
-  <body>
-    <slot />
+  <body class="min-h-dvh">
+    <Header navigation={NAVIGATION} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
     <script>
       import "@/scripts/adjustViewport.js";
     </script>
